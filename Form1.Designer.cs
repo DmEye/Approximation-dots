@@ -34,6 +34,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.clear_b = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -96,11 +97,22 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Function parameters:";
             // 
+            // clear_b
+            // 
+            this.clear_b.Location = new System.Drawing.Point(861, 205);
+            this.clear_b.Name = "clear_b";
+            this.clear_b.Size = new System.Drawing.Size(75, 23);
+            this.clear_b.TabIndex = 5;
+            this.clear_b.Text = "Clear";
+            this.clear_b.UseVisualStyleBackColor = true;
+            this.clear_b.Click += new System.EventHandler(this.clear_b_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(984, 711);
+            this.Controls.Add(this.clear_b);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "MainForm";
@@ -125,6 +137,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Button clear_b;
     }
 }
 

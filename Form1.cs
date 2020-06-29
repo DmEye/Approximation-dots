@@ -55,6 +55,21 @@ namespace Approximation_dots
             }
         }
 
+        private void clear_b_Click(object sender, EventArgs e)
+        {
+            max = int.MinValue;
+            min = int.MaxValue;
+            sumP = 0;
+            sumX = 0;
+            sumY = 0;
+            sumX2 = 0;
+            a = 0;
+            b = 0;
+            x.Clear();
+            y.Clear();
+            Invalidate();
+        }
+
         private void MainForm_MouseClick(object sender, MouseEventArgs e)
         {
             x.Add(e.X);
