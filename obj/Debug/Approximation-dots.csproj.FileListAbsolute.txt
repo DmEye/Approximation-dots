@@ -1,0 +1,10 @@
+D:\Дима\Практика\Программа\Approximation-dots\bin\Debug\Approximation-dots.exe.config
+D:\Дима\Практика\Программа\Approximation-dots\bin\Debug\Approximation-dots.exe
+D:\Дима\Практика\Программа\Approximation-dots\bin\Debug\Approximation-dots.pdb
+D:\Дима\Практика\Программа\Approximation-dots\obj\Debug\Approximation-dots.csprojAssemblyReference.cache
+D:\Дима\Практика\Программа\Approximation-dots\obj\Debug\Approximation_dots.MainForm.resources
+D:\Дима\Практика\Программа\Approximation-dots\obj\Debug\Approximation_dots.Properties.Resources.resources
+D:\Дима\Практика\Программа\Approximation-dots\obj\Debug\Approximation-dots.csproj.GenerateResource.cache
+D:\Дима\Практика\Программа\Approximation-dots\obj\Debug\Approximation-dots.csproj.CoreCompileInputs.cache
+D:\Дима\Практика\Программа\Approximation-dots\obj\Debug\Approximation-dots.exe
+D:\Дима\Практика\Программа\Approximation-dots\obj\Debug\Approximation-dots.pdb
