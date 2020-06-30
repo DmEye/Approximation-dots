@@ -28,112 +28,116 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            this.data_in = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clear_button = new System.Windows.Forms.Button();
-            this.approximate_button = new System.Windows.Forms.Button();
-            this.plot = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            ((System.ComponentModel.ISupportInitialize)(this.data_in)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.plot)).BeginInit();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.y_label = new System.Windows.Forms.Label();
+            this.x_label = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.clear_b = new System.Windows.Forms.Button();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // data_in
+            // groupBox1
             // 
-            this.data_in.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.data_in.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.data_in.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.data_in.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2});
-            this.data_in.Location = new System.Drawing.Point(13, 13);
-            this.data_in.Name = "data_in";
-            this.data_in.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.data_in.Size = new System.Drawing.Size(200, 507);
-            this.data_in.TabIndex = 0;
+            this.groupBox1.Controls.Add(this.y_label);
+            this.groupBox1.Controls.Add(this.x_label);
+            this.groupBox1.Location = new System.Drawing.Point(852, 12);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(120, 90);
+            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Mouse position:";
             // 
-            // Column1
+            // y_label
             // 
-            this.Column1.HeaderText = "X";
-            this.Column1.Name = "Column1";
+            this.y_label.AutoSize = true;
+            this.y_label.Location = new System.Drawing.Point(6, 58);
+            this.y_label.Name = "y_label";
+            this.y_label.Size = new System.Drawing.Size(17, 13);
+            this.y_label.TabIndex = 1;
+            this.y_label.Text = "Y:";
             // 
-            // Column2
+            // x_label
             // 
-            this.Column2.HeaderText = "Y";
-            this.Column2.Name = "Column2";
+            this.x_label.AutoSize = true;
+            this.x_label.Location = new System.Drawing.Point(6, 27);
+            this.x_label.Name = "x_label";
+            this.x_label.Size = new System.Drawing.Size(17, 13);
+            this.x_label.TabIndex = 0;
+            this.x_label.Text = "X:";
             // 
-            // clear_button
+            // label1
             // 
-            this.clear_button.Location = new System.Drawing.Point(13, 526);
-            this.clear_button.Name = "clear_button";
-            this.clear_button.Size = new System.Drawing.Size(75, 23);
-            this.clear_button.TabIndex = 0;
-            this.clear_button.Text = "Clear";
-            this.clear_button.UseVisualStyleBackColor = true;
-            this.clear_button.Click += new System.EventHandler(this.clear_button_Click);
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 33);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(16, 13);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "a:";
             // 
-            // approximate_button
+            // label2
             // 
-            this.approximate_button.Location = new System.Drawing.Point(138, 526);
-            this.approximate_button.Name = "approximate_button";
-            this.approximate_button.Size = new System.Drawing.Size(75, 23);
-            this.approximate_button.TabIndex = 1;
-            this.approximate_button.Text = "Approximate";
-            this.approximate_button.UseVisualStyleBackColor = true;
-            this.approximate_button.Click += new System.EventHandler(this.approximate_button_Click);
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(6, 56);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(16, 13);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "b:";
             // 
-            // plot
+            // groupBox2
             // 
-            chartArea1.Name = "ChartArea1";
-            this.plot.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.plot.Legends.Add(legend1);
-            this.plot.Location = new System.Drawing.Point(220, 13);
-            this.plot.Name = "plot";
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Point;
-            series1.Legend = "Legend1";
-            series1.Name = "Dots";
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series2.Legend = "Legend1";
-            series2.Name = "y = ax + b";
-            this.plot.Series.Add(series1);
-            this.plot.Series.Add(series2);
-            this.plot.Size = new System.Drawing.Size(652, 536);
-            this.plot.TabIndex = 2;
-            this.plot.Text = "chart1";
+            this.groupBox2.Controls.Add(this.label1);
+            this.groupBox2.Controls.Add(this.label2);
+            this.groupBox2.Location = new System.Drawing.Point(852, 108);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(120, 90);
+            this.groupBox2.TabIndex = 4;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Function parameters:";
+            // 
+            // clear_b
+            // 
+            this.clear_b.Location = new System.Drawing.Point(861, 205);
+            this.clear_b.Name = "clear_b";
+            this.clear_b.Size = new System.Drawing.Size(75, 23);
+            this.clear_b.TabIndex = 5;
+            this.clear_b.Text = "Clear";
+            this.clear_b.UseVisualStyleBackColor = true;
+            this.clear_b.Click += new System.EventHandler(this.clear_b_Click);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(884, 561);
-            this.Controls.Add(this.plot);
-            this.Controls.Add(this.approximate_button);
-            this.Controls.Add(this.clear_button);
-            this.Controls.Add(this.data_in);
+            this.ClientSize = new System.Drawing.Size(984, 711);
+            this.Controls.Add(this.clear_b);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox1);
             this.Name = "MainForm";
             this.Text = "Linear Approximation";
             this.Load += new System.EventHandler(this.MainForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.data_in)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.plot)).EndInit();
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.MainForm_Paint);
+            this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.MainForm_MouseClick);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MainForm_MouseMove);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView data_in;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.Button clear_button;
-        private System.Windows.Forms.Button approximate_button;
-        private System.Windows.Forms.DataVisualization.Charting.Chart plot;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label y_label;
+        private System.Windows.Forms.Label x_label;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Button clear_b;
     }
 }
 
