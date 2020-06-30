@@ -8,3 +8,12 @@ D:\Дима\Практика\Программа\Approximation-dots\obj\Debug\App
 D:\Дима\Практика\Программа\Approximation-dots\obj\Debug\Approximation-dots.csproj.CoreCompileInputs.cache
 D:\Дима\Практика\Программа\Approximation-dots\obj\Debug\Approximation-dots.exe
 D:\Дима\Практика\Программа\Approximation-dots\obj\Debug\Approximation-dots.pdb
+C:\Users\ognez\source\repos\Approximation-dots\bin\Debug\Approximation-dots.exe.config
+C:\Users\ognez\source\repos\Approximation-dots\bin\Debug\Approximation-dots.exe
+C:\Users\ognez\source\repos\Approximation-dots\bin\Debug\Approximation-dots.pdb
+C:\Users\ognez\source\repos\Approximation-dots\obj\Debug\Approximation-dots.csprojAssemblyReference.cache
+C:\Users\ognez\source\repos\Approximation-dots\obj\Debug\Approximation_dots.MainForm.resources
+C:\Users\ognez\source\repos\Approximation-dots\obj\Debug\Approximation_dots.Properties.Resources.resources
+C:\Users\ognez\source\repos\Approximation-dots\obj\Debug\Approximation-dots.csproj.GenerateResource.cache
+C:\Users\ognez\source\repos\Approximation-dots\obj\Debug\Approximation-dots.exe
+C:\Users\ognez\source\repos\Approximation-dots\obj\Debug\Approximation-dots.pdb

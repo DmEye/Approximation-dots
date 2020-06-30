@@ -74,6 +74,8 @@ namespace Approximation_dots
         {
             x.Add(e.X);
             y.Add(e.Y);
+            max = int.MinValue;
+            min = int.MaxValue;
             if (x.Count > 1)
             {
                 Approximating();
