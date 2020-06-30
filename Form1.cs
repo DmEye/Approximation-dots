@@ -46,7 +46,7 @@ namespace Approximation_dots
             g = e.Graphics;
             for (int i = 0; i < x.Count; i++)
             {
-                g.FillEllipse(new SolidBrush(Color.Black), x[i] - 4, y[i] - 4, 8, 8);
+                g.FillEllipse(new SolidBrush(Color.Black), x[i] - 4, Math.Abs(-height + y[i]) - 4, 8, 8);
             }
 
             if (min != int.MaxValue && max != int.MinValue)
@@ -73,7 +73,7 @@ namespace Approximation_dots
         private void MainForm_MouseClick(object sender, MouseEventArgs e)
         {
             x.Add(e.X);
-            y.Add(e.Y);
+            y.Add(height - e.Y);
             max = int.MinValue;
             min = int.MaxValue;
             if (x.Count > 1)
