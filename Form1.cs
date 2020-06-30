@@ -1,64 +1,63 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.Windows.Forms;
 
 namespace Approximation_dots
 {
     public partial class MainForm : Form
     {
-        private int width;
-        private int height;
         private float a;
         private float b;
-        private int sumP, sumX, sumY, sumX2;
-        private int max = int.MinValue;
-        private int min = int.MaxValue;
-        private int x_max;
-        private int x_min;
-        private Graphics g;
+        private float sumP, sumX, sumY, sumX2;
+        private float x_max;
 
-        private List<int> x;
-        private List<int> y;
+        private List<float> x;
+        private List<float> y;
+        private List<float> x2;
+        private List<float> y2;
         public MainForm()
         {
             InitializeComponent();
         }
 
-        private void MainForm_Load(object sender, EventArgs e)
+        private void approximate_button_Click(object sender, EventArgs e)
         {
-            width = ClientSize.Width;
-            height = ClientSize.Height;
+            x.Clear();
+            y.Clear();
+            x2.Clear();
+            y2.Clear();
+            for (int i = 0; i < data_in.RowCount - 1; i++)
+            {
+                x.Add((float)Convert.ToDouble(data_in.Rows[i].Cells[0].Value));
+                y.Add((float)Convert.ToDouble(data_in.Rows[i].Cells[1].Value));
 
-            x = new List<int>();
-            y = new List<int>();
+                if ((float)Convert.ToDouble(data_in.Rows[i].Cells[0].Value) > x_max)
+                {
+                    x_max = (float)Convert.ToDouble(data_in.Rows[i].Cells[0].Value);
+                }
+            }
+            Approximating();
 
-            sumP = 0;
-            sumX = 0;
-            sumY = 0;
-            sumX2 = 0;
-            a = 0;
-            b = 0;
+            x2.Add(0);
+            x2.Add((float)(x_max * 1.04));
+            y2.Add(b);
+            y2.Add(a * x2[1] + b);
+
+            plot.Series[0].Points.DataBindXY(x, y);
+            plot.Series[1].Points.DataBindXY(x2, y2);
+            if (b < 0)
+            {
+                plot.Series[1].Name = "y = " + a + "x " + b;
+            }
+            else
+            {
+                plot.Series[1].Name = "y = " + a + "x + " + b;
+            }
         }
 
-        private void MainForm_Paint(object sender, PaintEventArgs e)
+        private void clear_button_Click(object sender, EventArgs e)
         {
-            g = e.Graphics;
-            for (int i = 0; i < x.Count; i++)
-            {
-                g.FillEllipse(new SolidBrush(Color.Black), x[i] - 4, y[i] - 4, 8, 8);
-            }
-
-            if (min != int.MaxValue && max != int.MinValue)
-            {
-                g.DrawLine(new Pen(Color.Red, 2), x_min, min, x_max, max);
-            }
-        }
-
-        private void clear_b_Click(object sender, EventArgs e)
-        {
-            max = int.MinValue;
-            min = int.MaxValue;
+            x_max = float.MinValue;
             sumP = 0;
             sumX = 0;
             sumY = 0;
@@ -67,48 +66,34 @@ namespace Approximation_dots
             b = 0;
             x.Clear();
             y.Clear();
-            Invalidate();
+            x2.Clear();
+            y2.Clear();
+
+            data_in.Columns.Clear();
+            data_in.ColumnCount = 2;
+            data_in.Columns[0].Name = "X";
+            data_in.Columns[1].Name = "Y";
+
+            plot.Series[0].Points.DataBindXY(x, y);
+            plot.Series[1].Points.DataBindXY(x2, y2);
+            plot.Series[1].Name = "y = ax + b";
         }
 
-        private void MainForm_MouseClick(object sender, MouseEventArgs e)
+        private void MainForm_Load(object sender, EventArgs e)
         {
-            x.Add(e.X);
-            y.Add(e.Y);
-            max = int.MinValue;
-            min = int.MaxValue;
-            if (x.Count > 1)
-            {
-                Approximating();
-                for (int i = 0; i < width; i++)
-                {
-                    if (i * a + b < height)
-                    {
-                        if (i * a + b > max)
-                        {
-                            max = (int)(i * a + b);
-                            x_max = i;
-                        }
-                        if (i * a + b < min)
-                        {
-                            min = (int)(i * a + b);
-                            x_min = i;
-                        }
-                    }
-                    else
-                    {
-                        break;
-                    }
-                }
-            }
-            label1.Text = "a: " + a;
-            label2.Text = "b: " + b;
-            Invalidate();
-        }
+            x = new List<float>();
+            x2 = new List<float>();
+            y = new List<float>();
+            y2 = new List<float>();
 
-        private void MainForm_MouseMove(object sender, MouseEventArgs e)
-        {
-            x_label.Text = "X: " + e.X;
-            y_label.Text = "Y: " + e.Y;
+            sumP = 0;
+            sumX = 0;
+            sumY = 0;
+            sumX2 = 0;
+            a = 0;
+            b = 0;
+
+            x_max = float.MinValue;
         }
 
         private void Approximating()
@@ -126,8 +111,8 @@ namespace Approximation_dots
                 sumY += y[i];
                 sumX2 += x[i] * x[i];
             }
-            a = (float)(x.Count * sumP - sumX * sumY) / (float)(x.Count * sumX2 - sumX * sumX);
-            b = (float)(sumY - a * sumX) / (float)x.Count;
+            a = (x.Count * sumP - sumX * sumY) / (x.Count * sumX2 - sumX * sumX);
+            b = (sumY - a * sumX) / x.Count;
         }
     }
 }
