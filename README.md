@@ -1,6 +1,8 @@
 # Approximation-dots
 This project is a practical task in computer science.
 # How to use
-Launch program from folder "bin".
-Click somewhere to add a point.
-If count of points is more or equals 2 then a Approximation line is being drawed.
+<ol>
+  <li>Launch program from folder "bin".</li>
+  <li>You have a table, which can be filled by you.</li>
+  <li>The program draws your dots and a approximation line.</li>
+</ol>
